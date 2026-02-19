@@ -34,12 +34,14 @@ async function configureAmplify() {
       Cognito: {
         userPoolId: import.meta.env.VITE_USER_POOL_ID,
         userPoolClientId: import.meta.env.VITE_USER_POOL_CLIENT_ID,
+        // 👇👇👇 A PEÇA QUE FALTAVA 👇👇👇
+        identityPoolId: import.meta.env.VITE_IDENTITY_POOL_ID, 
       },
     },
   };
 
   Amplify.configure(config);
-}// ✅ FECHA configureAmplify AQUI
+}
 
 /* ========= TEMA DO LOGIN ========= */
 const theme = createTheme({
